@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+    <HEAD>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
+        <title>The Hegemony</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+    </HEAD>
+    <BODY>
+    <nav>
+        <svg
+            width="150mm"
+            height="200mm"
+            viewBox="0 0 150 200"
+            version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg">   
+                <g
+                    id="background"
+                    transform="translate(0,-97)">
+                    <path
+                        style="fill:none;stroke:#ffffff;stroke-width:0.15525967;"
+                        d="M 111.3012,372.74045 9.8203633,196.97048 263.03288,343.1628 M 111.3012,21.200503 9.8203633,196.97048 263.03288,50.77816 M 9.8203633,196.97048 H 242.70986" />
+                    <path
+                        style="fill:none;stroke:#ffffff;stroke-width:0.26765367;"
+                        d="M 9.8705868,196.99388 3.5520933,243.68581 M 9.8698284,196.9929 -8.2987101,240.62437 M 9.8203633,196.97048 -18.997587,234.24764 M 9.8201885,196.96926 -27.729959,225.67095 m 37.5993324,-28.6769 -43.5956584,17.874 M 9.8698284,196.9929 -37.000389,203.07422 m 46.8207523,-6.10374 -46.6919463,-6.3185 M 9.8213269,196.96972 -33.810132,178.80118 M 9.8681583,196.99422 -27.409009,168.17627 M 9.8693734,196.99405 -18.832312,159.44389 M 9.8213269,196.96972 -8.0526701,153.37406 M 9.8224662,196.97017 3.7411531,150.09995 m 6.1355968,46.89546 6.3184931,46.69194 M 9.8775083,196.99444 28.046047,240.6259 M 9.9269732,196.97202 38.744922,234.24918 M 9.927148,196.9708 47.477296,225.67248 m -37.5993327,-28.6769 43.5956587,17.874 M 9.8775083,196.99444 56.747726,203.07575 M 9.9269732,196.97202 56.61892,190.65352 M 9.9260096,196.97125 53.557469,178.80272 M 9.8791784,196.99576 47.156345,168.1778 M 9.8779633,196.99558 38.579649,159.44542 M 9.9260096,196.97125 27.800007,153.37559 M 9.9248703,196.97171 16.006183,150.10148" />
+                    <path
+                        style="fill:none;stroke:#ffffff;stroke-width:0.17843577;"
+                        d="m 9.8791784,196.99576 0,-54.32045 m -0.00858,54.31857 -14.0591598,52.46953 M 9.8705868,196.99388 -28.539769,235.40424 M 9.8705868,196.99388 -42.598942,211.05305 M 9.8705868,196.99388 -42.598945,182.93472 M 9.8705868,196.99388 -28.539779,158.58352 M 9.8767499,196.99541 -4.1824261,144.52588 M 9.8853413,196.99422 23.944501,249.46376 M 9.8853413,196.99422 48.295698,235.40459 M 9.8853413,196.99422 62.354869,211.0534 M 9.8853413,196.99422 62.354873,182.93506 M 9.8853413,196.99422 48.295707,158.58386 M 9.8791784,196.99576 23.938354,144.52623" />
+                    <path
+                        style="fill:none;stroke:#ffffff;stroke-width:0.2;"
+                        d="m 9.9269832,252.85718 0,-60.88516" />
+                    <path
+                        id="trajectory-luna-europa"
+                        class="trajectory"
+                        style="fill:none;stroke:#ffffff;stroke-width:0.1;"
+                        d="m 21.114292,256.18588 c 23.834587,-9.27074 44.160768,37.17546 63.342877,18.4416" />
+                    <path
+                        id="trajectory-earth-luna0"
+                        class="trajectory"
+                        style="fill:none;stroke:#ffffff;stroke-width:0.1;"
+                        d="m 65.38988,261.09226 c 10.576626,-28.64595 65.1868,-0.38645 65.01191,-34.01786" />
+                    <path
+                        id="trajectory-earth-luna1"
+                        class="trajectory"
+                        style="fill:none;stroke:#ffffff;stroke-width:0.1;"
+                        d="m 93.738095,266.7619 c 4.103095,-8.72664 39.123515,-9.06908 36.663695,-39.6875" />
+                    <path
+                        id="trajectory-earth-mars"
+                        class="trajectory"
+                        style="fill:none;stroke:#ffffff;stroke-width:0.1;"
+                        d="m 93.677969,128.6202 c 1.098058,23.32125 -52.263681,62.06405 8.819891,108.91233" />
+                    <path
+                        id="trajectory-earth-saturn"
+                        class="trajectory"
+                        style="fill:none;stroke:#ffffff;stroke-width:0.1;"
+                        d="m 131.0313,174.58944 c 4.68859,20.21411 -29.77039,25.41456 -32.379516,45.68139" />
+                    <path
+                        id="trajectory-saturn-pluto"
+                        class="trajectory"
+                        style="fill:none;stroke:#ffffff;stroke-width:0.1;"
+                        d="m 26.269345,135.88765 c 17.505124,-0.24115 27.425185,-33.96863 54.277971,-33.96863 13.743708,0 24.773014,7.90053 24.773014,23.35596 0,22.93338 -13.131342,24.41847 -12.310537,41.29749" />
+                    <path
+                        id="trajectory-earth-luna2"
+                        class="trajectory"
+                        style="fill:none;stroke:#ffffff;stroke-width:0.1;"
+                        d="m 78.195214,251.28388 c 3.540797,-1.69483 7.593779,-1.65155 11.427649,-2.03205 9.57527,-0.7023 19.443617,-0.90214 28.491867,-4.47127 5.06697,-1.97877 9.7574,-5.7863 11.37988,-11.14922 0.683,-2.11149 0.93964,-4.34341 0.90718,-6.55694 0.60929,5.24583 -0.93275,10.89511 -4.94874,14.50097 -5.38174,4.9049 -12.69161,6.68814 -19.65474,8.00866 -5.952938,1.1588 -12.068066,1.44955 -17.934401,3.03173 -0.480944,0.15177 -0.956382,0.32472 -1.411713,0.54254" />
+                    <path
+                        id="trajectory-earth-luna3"
+                        class="trajectory"
+                        style="fill:none;stroke:#ffffff;stroke-width:0.1;"
+                        d="m 92.876161,262.25496 c 3.085974,-6.12127 40.121589,-7.14913 37.525629,-35.18056 1.70129,25.26851 -28.75144,23.48154 -39.530152,30.77061" />
+                    <circle
+                        style="fill:none;stroke:#808080;stroke-width:0.1;"
+                        cx="10"
+                        cy="197"
+                        r="69.821808" />
+                    <circle
+                        style="fill:none;stroke:#808080;stroke-width:0.1;"
+                        cx="10.000001"
+                        cy="197"
+                        r="89.770897" />
+                    <circle
+                        style="fill:none;stroke:#808080;stroke-width:0.1;"
+                        cx="9.9999952"
+                        cy="197"
+                        r="129.66907" />
+                    <circle
+                        style="fill:none;stroke:#808080;stroke-width:0.1;"
+                        cx="10.000004"
+                        cy="197"
+                        r="149.61816" />
+                    <circle
+                        style="fill:none;stroke:#808080;stroke-width:0.11358462;"
+                        cx="9.999999"
+                        cy="197"
+                        r="169.94321" />
+                    <circle
+                        style="fill:none;stroke:#808080;stroke-width:0.1;"
+                        cx="10.00001"
+                        cy="196.99998"
+                        r="109.71999" />
+                </g>
+                <g
+                    id="sun"
+                    class="planet"
+                    transform="translate(0,-97)">
+                    <circle
+                        style="fill:#000000;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.5;"
+                        cx="9.8853436"
+                        cy="196.99422"
+                        r="35.338299" />
+                    <circle
+                        style="fill:none;stroke:#FF5722;stroke-width:0.19052169;"
+                        cx="9.999999"
+                        cy="197"
+                        r="21.394062" />
+                    <circle
+                        style="fill:none;stroke:#FFEB3B;stroke-width:1;"
+                        cx="10.058403"
+                        cy="196.9416"
+                        r="26.221409" />
+                    <circle
+                        style="fill:none;stroke:#FF9800;stroke-width:2.06349158;stroke-dasharray:0.5, 0.5;"
+                        cx="-10.058403"
+                        cy="-196.9416"
+                        r="23.536921"
+                        transform="scale(-1)" />
+                    <path
+                        style="fill:none;stroke:#fff59c;stroke-width:0.26458332px;"
+                        d="m 36.568818,194.7518 c 4.22991,0.38419 3.91465,2.10952 7.61718,2.33861 -2.20863,2.27587 -4.32502,0.59301 -7.55037,2.60588 M 7.5503642,170.84878 c 0.3841876,-4.22991 2.1095204,-3.91465 2.3386082,-7.61718 2.2758716,2.20863 0.5930156,4.32502 2.6058786,7.55037" />
+                    <path
+                        style="fill:none;stroke:#fff59c;stroke-width:0.26458332px;"
+                        d="m 35.577294,201.2838 c 3.986343,1.46588 3.235278,3.05083 6.752354,4.2304 -2.722413,1.62668 -4.331131,-0.5466 -7.967549,0.5629 M 13.734175,170.68473 c 1.465879,-3.98635 3.050827,-3.23528 4.230394,-6.75236 1.626687,2.72241 -0.546589,4.33113 0.562906,7.96755" />
+                    <path
+                        style="fill:none;stroke:#fff59c;stroke-width:0.26458332px;"
+                        d="m 33.425002,207.60953 c 3.471114,2.44767 2.335427,3.78422 5.427366,5.83389 -3.050665,0.86664 -4.042082,-1.64895 -7.841752,-1.51843 M 20.245793,172.39968 c 2.447671,-3.47112 3.784223,-2.33543 5.833884,-5.42737 0.866647,3.05067 -1.648944,4.04209 -1.518428,7.84175" />
+                    <path
+                        style="fill:none;stroke:#fff59c;stroke-width:0.26458332px;"
+                        d="m 30.011277,213.27669 c 2.719333,3.26265 1.276418,4.25972 3.732511,7.0398 -3.17102,0.0476 -3.477572,-2.63893 -7.181553,-3.49628 m -0.168117,-40.96466 c 3.262659,-2.71934 4.259731,-1.27642 7.039804,-3.73252 0.04755,3.17103 -2.638924,3.47758 -3.496283,7.18155" />
+                    <path
+                        style="fill:none;stroke:#fff59c;stroke-width:0.26458332px;"
+                        d="m 25.245776,218.31652 c 1.782237,3.85531 0.130428,4.44495 1.783294,7.76598 -3.075276,-0.77479 -2.676071,-3.44907 -6.031943,-5.23587 M 31.437171,181.2343 c 3.855304,-1.78224 4.444947,-0.13043 7.765985,-1.78331 -0.774795,3.07528 -3.449079,2.67609 -5.235882,6.03195" />
+                    <path
+                        style="fill:none;stroke:#fff59c;stroke-width:0.26458332px;"
+                        d="m 19.118051,221.89564 c 0.723682,4.18522 -1.024454,4.32725 -0.287453,7.96291 -2.769957,-1.54434 -1.692201,-4.02417 -4.471266,-6.61865 m 20.336735,-35.56049 c 4.185214,-0.72369 4.327245,1.02445 7.962907,0.28745 -1.544334,2.76996 -4.024165,1.69221 -6.618646,4.47127" />
+                    <path
+                        style="fill:none;stroke:#fff59c;stroke-width:0.26458332px;"
+                        d="m 12.665798,223.77026 c -0.38419,4.22991 -2.10952,3.91465 -2.33861,7.61718 -2.27587,-2.20863 -0.59301,-4.32502 -2.60588,-7.55037" />
+                    <path
+                        style="fill:none;stroke:#fff59c;stroke-width:0.26458332px;"
+                        d="m 6.1748234,170.99517 c -1.4658784,-3.98635 -3.0508255,-3.23528 -4.2303916,-6.75236 -1.62668604,2.72241 0.5465887,4.33113 -0.5629057,7.96755" />
+                    <path
+                        style="fill:none;stroke:#fff59c;stroke-width:0.26458332px;"
+                        d="m 0.79095043,222.20608 c -0.72368167,4.18522 1.02445337,4.32725 0.28745267,7.96291 2.7699555,-1.54434 1.6922001,-4.02417 4.4712636,-6.61865" />
+                    <text class="label"
+                        style="line-height:1.25;text-anchor:middle;transform:translate(3px, 197px) rotate(90deg);"
+                        x="0"
+                        y="0">Home</text>
+                </g>
+                <g
+                    id="saturn"
+                    class="planet"
+                    style="transform:translate(111px,73px)"><g>
+                    <text class="label"
+                        style="line-height:1.25;"
+                        x="1.00401"
+                        y="-19.214363">Industry</text>
+                    <circle
+                    style="fill:#000000;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.30000001;"
+                    cx="0"
+                    cy="0"
+                    r="19.85339" />
+                    <image
+                    xlink:href="img/saturn.png"
+                    transform="scale(-1,1)"
+                    width="80"
+                    height="35"
+                    x="-40"
+                    y="-17.5" />
+                </g></g>
+                <g
+                    id="earth"
+                    class="planet"
+                    style="transform:translate(114px,129px)"><g>
+                    <text class="label"
+                        style="line-height:1.25;fill:#bfbfbf;"
+                        x="2.2022"
+                        y="-16.80558">Culture</text>
+                    <circle
+                        style="fill:#000000;stroke:#ffffff;stroke-width:0.30000001;"
+                        cx="0"
+                        cy="0"
+                        r="16.832996" />
+                    <image
+                        xlink:href="img/earth2.png"
+                        width="30"
+                        height="30"
+                        x="-15"
+                        y="-15" />
+                </g></g>
+                <g
+                    id="luna"
+                    class="planet"
+                    style="transform:translate(79px,169px)"><g>
+                    <text class="label"
+                        style="line-height:1.25;fill:#bfbfbf;"
+                        x="8.673454"
+                        y="15.82115">Trade</text>
+                    <circle
+                        style="fill:#000000;stroke:#ffffff;stroke-width:0.30000001;"
+                        cx="0"
+                        cy="0"
+                        r="14.880692" />
+                    <image
+                        xlink:href="img/luna.png"
+                        width="26"
+                        height="26"
+                        x="-13"
+                        y="-13" />
+                </g></g>
+                <g
+                    id="mars"
+                    class="planet"
+                    style="transform:translate(79px,31px)"><g>
+                    <text class="label"
+                        style="line-height:1.25;fill:#bfbfbf;"
+                        x="-18.679222"
+                        y="19.660889">Oddities</text>
+                    <circle
+                        style="fill:#000000;stroke:#ffffff;stroke-width:0.30000001;"
+                        cx="0"
+                        cy="0"
+                        r="14.880692" />
+                    <image
+                        xlink:href="img/mars2.png"
+                        width="26"
+                        height="26"
+                        x="-13"
+                        y="-13" />
+                </g></g>
+                <g
+                    id="europa"
+                    class="planet"
+                    style="transform:translate(26px,171px)"><g>
+                    <text class="label"
+                        style="text-anchor:middle;line-height:1.25;fill:#bfbfbf;"
+                        x="3"
+                        y="17.52722">Conservation</text>
+                    <circle
+                        style="fill:#000000;stroke:#ffffff;stroke-width:0.30000001;"
+                        cx="0"
+                        cy="0"
+                        r="12.83627" />
+                    <image
+                        xlink:href="img/europa2.png"
+                        transform="rotate(105)"
+                        width="22"
+                        height="22"
+                        x="-11"
+                        y="-11" />
+                </g></g>
+                <g
+                    id="pluto"
+                    class="planet"
+                    style="transform:translate(25px,27px)"><g>
+                    <text class="label"
+                        style="text-anchor:middle;line-height:1.25;fill:#bfbfbf;"
+                        x="2"
+                        y="-12.386688">Exploration</text>
+                    <circle
+                        style="fill:#000000;stroke:#ffffff;stroke-width:0.30000001;"
+                        cx="0"
+                        cy="0"
+                        r="12.83627" />
+                    <image
+                        xlink:href="img/pluto.png"
+                        width="22"
+                        height="22"
+                        x="-11"
+                        y="-11" />
+                </g></g>
+        </svg>
+    </nav>
+    <main>
+        <article id=home class=open>
+            <h1>Ignisato Hegemony<span class=close>✖</span></h1>
+            <p>By 2167, humanity has spread across the Solar System. This expansion was driven by ignisato, an alien species with technology far beyond ours. Following first contact, we were flooded with wondrous technologies while our institutions eroded in an economic upheaval known by the survivors as the Uplift.</p>
+            <p>Despite advances on many fronts, runaway complexity and ignisato influence leaves many feeling their lives are not their own. Struggling to adjust to their guidance, we race to the stars and strive to understand the world we find ourselves in, including the arcane technologies that make it possible.</p>
+        </article>
+        <article id=culture>
+            <h1>Research and Culture<span class=close>✖</span></h1>
+            <img src="img/earth.png">
+            <p>Major population centers often see the development of universities and cultural institutions impossible with smaller groups of people. These advanced economies develop into hubs of innovation and entertainment which dominate their region of space.</p>
+            <p>Humans can live anywhere with more than a tenth of Earth’s gravity and while habitats and spacecraft easily provide quarter-G and more, the comfort of rock under your feet draws people to settle anywhere they can get it naturally. Many people call orbital habitats home, but just as many view them as temporary living arrangements before they retire somewhere solid.</p>
+        </article>
+        <article id=industry>
+            <h1>Industry and Production<span class=close>✖</span></h1>
+            <div id=saturn-img><img src="img/saturn.png"></div>
+            <p>Self-reliance and widespread use of small-scale manufacturing are staples of the offworld economy, but some places develop excess capacity and produce for export. They provide the complicated goods local microfacturing can’t handle and extract resources lacking in other parts of the system.</p>
+            <p>No matter where you are in the system, you’re not far from a sort of artificial wildlife that builds infrastructure and maintains structures, including almost all spacecraft. Automata come in all shapes and sizes and seem largely oblivious to human presence, despite humans living on and around their hives. Their exotic components make them a target for hunters until human engineers can discover their secrets.</p>
+        </article>
+        <article id=trade>
+            <h1>Logistics and Trade<span class=close>✖</span></h1>
+            <img src="img/luna.png">
+            <p>The Solar System is an enormous place and moving people and cargo from one end to another requires enormous amounts of energy and coordination. A network of propellant depots and stations on cycling orbits helps ease the passage across the long stretches of void.</p>
+            <p>Efficient fusion reactors have all but removed the limitations of pre-Uplift spaceflight, enabling brachistochrone trajectories for most destinations. For well-funded endeavors, leading edge hydrogen-burning reactors make any trip trivial to fuel while most make do older aneutronic designs that leave them dependent on helium-3 production facilities.</p>
+        </article>
+        <article id=exploration>
+            <h1>Exploration and Safety<span class=close>✖</span></h1>
+            <img src="img/pluto.png">
+            <p>Spaceflight is a dangerous business where any number of hazards can leave a vessel disabled or venting atmosphere or worse. To prevent that, a legion of skywatch telescopes are scattered all across the Solar System to discover and track every piece of debris they can.</p>
+            <p>This critical service also forms the backbone for the FTL communications network in the system and the vast reams of data generated by so many sky surveys are also used for scientific purposes. Often home to no more than a few hundred residents, telescope outposts are among the most diverse and pioneering settlements in the system, learning the hard lessons space has to teach and thriving all the same.</p>
+        </article>
+        <article id=conservation>
+            <h1>Research and Conservation<span class=close>✖</span></h1>
+            <img src="img/europa.png">
+            <p>One of the more shocking discoveries about ignisato has been their conservation tradition. They are eager stewards of cultural expression and biodiversity, defending and documenting every scrap of it they can find. This can take quite aggressive forms, as the conflict over Mercury showed and the growing struggle for Titan.</p>
+            <p>For the most part though, the Gendustry Group organizes and conducts surveys of organisms and biospheres in many unexpected locations, their experience giving them a good idea where to start looking. These surveys are given wide berth by development interests, even at the cost of profits in the case of the total settlement prohibition on Enceladus.</p>
+        </article>
+        <article id=oddities>
+            <h1>Experiments and Oddities<span class=close>✖</span></h1>
+            <img src="img/mars.png">
+            <p>While most parts of the Solar System have seen a substantial amount of activity, others have not. Colonies are enormously expensive to establish and without a corporate sponsor, some worlds remain relatively unexplored.</p>
+            <p>Mars is the exception to this. Despite having little economic usefulness or investor interest from the EDC, it has been a dream of humans for decades to settle the planet. The gravity well makes it attractive for Inner System colonists giving up their careers or retiring, particularly from the Belt. However, without external support, development is extremely slow as the colonists must purchase or produce everything themselves.</p>
+        </article>
+    </main>
+    <div></div>
+    <script src="app.js"></script>
+    </BODY> 
+</HTML>
