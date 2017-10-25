@@ -13,22 +13,27 @@ main {
 }
 
 article {
-    background: #bfbfbf;
-    color: #000;
-    max-height: 90vh;
+    background: rgba(0,0,0,0.6);
+    max-height: 70vh;
     position: absolute;
-    left: 50vw;
     overflow: auto;
-    top: -100vh;
-    transform: translate(-50%,-50%);
-    transition: top 1s;
+    opacity: 0;
+    pointer-events: none;
+    right: -100vw;
+    top: 30vh;
+    transition: opacity 0.5s;
     width: 100vw;
     max-width: 50rem;
 }
+article.open {
+    opacity: 1;
+    pointer-events: all;
+}
+#home {
+    max-height: 100vh;
+    top: 0;
+}
 article h1 {
-    background: #444;
-    border-bottom: solid 2px #FF9800;
-    color: #fff;
     font-size: 1.7em;
     letter-spacing: 2px;
     line-height: 1;
@@ -37,27 +42,35 @@ article h1 {
     position: relative;
     text-align: center;
 }
+article h1::before {
+    background: #FF9800;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 152, 0,0)), to(rgba(255, 152, 0,0)), color-stop(50%, rgba(255, 152, 0,1)));
+    bottom: -1px;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
 article h1::after {
-    background: #444;
-    border: solid 2px #FF9800;
-    border-left: none;
-    border-top: none;
+    background: #FF9800;
     bottom: 0;
     content: '';
-    height: 2rem;
+    height: 0.5rem;
     left: 50%;
     position: absolute;
     transform: translate(-50%,50%) rotate(45deg);
-    width: 2rem;
-}
-article.open {
-    top: 50vh;
+    width: 0.5rem;
 }
 .close {
-    float: right;
     cursor: pointer;
+    display: block;
+    position: fixed;
+    right: 2vh;
+    top: 32vh
 }
 article img {
+    display: none;
     background: #bfbfbf;
     border-radius: 50%;
     float: left;
@@ -120,9 +133,33 @@ svg {
 #background {
     opacity: 0.7;
 }
+#planet-container {
+    transform-origin: 0 50%;
+}
 .trajectory {
     transition: stroke-dasharray 5s;
     stroke-dasharray: 1.2,1.2;
+}
+.planet {
+    transition: transform 0.5s linear;
+}
+.planet image {
+    transition: transform 0.5s linear;
+}
+.planet text, .planet circle {
+    transition: opacity 0.25s;
+}
+.focus {
+    transform: translate(75px,10px) !important;
+}
+.focus image {
+    transform: scale(2);
+}
+.focus text, .focus circle {
+    opacity: 0;
+}
+#saturn.focus image {
+    transform: scale(-2,2);
 }
 
 .planet:hover circle:first-of-type {
@@ -141,7 +178,27 @@ svg {
     #saturn image {
         transform: scale(1,1);
     }
+    #saturn.focus image {
+        transform: scale(2);
+    }
+    article {
+        top: 50vh;
+        transform: translate(0,-50%);
+    }
+    #home {
+        max-height: 70vh;
+        left: 50vw;
+        right: auto;
+        top: 50vh;
+        transform: translate(-50%,-50%);
+    }
     article p {
         text-align: justify;
+    }
+    .close {
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+        position: static;
     }
 }
