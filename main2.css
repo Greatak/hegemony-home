@@ -1,5 +1,5 @@
 body {
-    background: #222;
+    background: url('img/grid.png') 75% 0 #222;
     color: #fff;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
@@ -13,22 +13,59 @@ main {
     height: 100vh;
 }
 
-#content h1, #content p {
-    margin: 1rem auto;
-    max-width: 50em;
-}
-#content h1 {
+#content {
+    border-style: solid;
+    border-width: 75px;
+    border-image: url(img/border.png) 125 stretch;
+    box-sizing: border-box;
+    margin: 3px 3px -5em;
     text-align: center;
 }
+#content h1 {
+    display: inline-block;
+    line-height: 1;
+    margin: 0 -50px;
+    padding: 0.5rem;
+    position: relative;
+    text-align: center;
+    transform: translate3D(0, 200%, 0.5px) scale(0.5);
+    max-width: 50em;
+    z-index: 5;
+}
+#content h1:before {
+    background: url('img/heading-background.png') 50% 100% / 100% 100% no-repeat;
+    content: '';
+    height: 7em;
+    left: 50%;
+    position: absolute;
+    top: -5rem;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 200%;
+    z-index: -1;
+}
+#content h1:after {
+    background: #222;
+    border: solid 1px #fff;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
 #content p {
+    margin: 1rem -50px;
     text-align: justify;
+    max-width: 50em;
 }
 
 #divider img {
-    margin: 50% 0 -20%;
+    margin: 50% -12% -20%;
     transform: translateZ(-0.5px) scale(1.5) rotate(10deg);
     transform-origin: 50% 100%;
-    width: 100%;
+    width: 122%;
 }
 
 .orbit {
@@ -58,5 +95,18 @@ text {
     text {
         font-size: 16px;
         transform: translate(0,8px);
+    }
+}
+@media (min-width: 55em) {
+    main {
+        text-align: center;
+    }
+    #content {
+        display: inline-block;
+        margin: 1em auto -15em;
+        padding-bottom: 5em;
+    }
+    #content p {
+        margin: 1rem -1rem;
     }
 }
